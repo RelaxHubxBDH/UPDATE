@@ -37,12 +37,12 @@ try:
     if len(UPSTREAM_REPO) == 0:
        raise TypeError
 except:
-    UPSTREAM_REPO = "https://github.com/Dawn-India/Z-Mirror"
+    UPSTREAM_REPO = ""
 try:
     if len(UPSTREAM_BRANCH) == 0:
        raise TypeError
 except:
-    UPSTREAM_BRANCH = 'h-code'
+    UPSTREAM_BRANCH = ''
 
 if ospath.exists('.git'):
     srun(["rm", "-rf", ".git"])
@@ -60,7 +60,7 @@ if update.returncode == 0:
     log_info('Successfully updated with latest commit from UPSTREAM_REPO')
     log_info(f'Upstream Repo: {UPSTREAM_REPO}')
     log_info(f'Upstream Branch: {UPSTREAM_BRANCH}')
-    log_info('Thanks For Deploying Z-Mirror')
+    log_info('Thanks For Deploying ')
 else:
     log_error('Something went wrong while updating, check UPSTREAM_REPO if valid or not!')
     log_info(f'Entered Upstream Repo: {UPSTREAM_REPO}')
